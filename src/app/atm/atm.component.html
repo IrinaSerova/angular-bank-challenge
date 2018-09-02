@@ -1,14 +1,15 @@
 <h1>ATM View</h1>
 <div class="main">
   <section class="display">
-    > Welcome, Henry!
+     Welcome, Henry!
     <!-- Display Feedback information here -->
+    <h3> {{widthdrawlInfo}}</h3>
   </section>
   <aside class="options">
     <!-- Add functionality to the buttons below -->
     <ul class="options-list">
       <li class="options-item">
-        <button>Make a Widthdrawl</button>
+        <button (click)="widthdrawlButton()">Make a Widthdrawl</button>
       </li>
       <li class="options-item">
         <button>Deposit Money</button>

@@ -8,5 +8,9 @@ import { Component } from '@angular/core';
 export class AtmComponent {
 
   constructor() { }
+  widthdrawlInfo = '';
+  widthdrawlButton(){
+    this.widthdrawlInfo = '10';
+  }
 
 }
