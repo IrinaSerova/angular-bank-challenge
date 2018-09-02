@@ -3,22 +3,33 @@
   <section class="display">
      Welcome, Henry!
     <!-- Display Feedback information here -->
-    <h3> {{widthdrawlInfo}}</h3>
+   
+    
+    <!-- Display Customer Balance  -->
+    <!--<h4>Your Balance {{ bankService.account.balance }}</h4>-->
+    <h4>Your Balance {{ balance }}</h4>
+    <h3>Last 3 Transactions</h3>
+    <ul>
+      <li *ngFor="let transaction of bankService.account.transactions">
+        {{ transaction.date }} {{ transaction.type | uppercase }}  {{ transaction.amount }} {{ transaction.currency | uppercase }}
+      </li>
+    </ul>
+    
   </section>
   <aside class="options">
     <!-- Add functionality to the buttons below -->
     <ul class="options-list">
       <li class="options-item">
-        <button (click)="widthdrawlButton()">Make a Widthdrawl</button>
+        <button (click)="onWithdraw()">Make a Widthdrawl</button>
       </li>
       <li class="options-item">
-        <button>Deposit Money</button>
+        <button (click)="onDeposit()">Deposit Money</button>
       </li>
       <li class="options-item">
-        <button>Balance Inquiry</button>
+        <button (click)="onGetBalance()">Balance Inquiry</button>
       </li>
       <li class="options-item">
-        <button>Transactions History</button>
+        <button (click)="onGetTransactions()">Transactions History</button>
       </li>
     </ul>
   </aside>
