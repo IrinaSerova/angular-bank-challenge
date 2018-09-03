@@ -58,9 +58,9 @@ export class BankService {
     
   }
   
-  // show(){
-  //   show=!show
-  //   show ? 'hide' : 'show'
+  // show() {
+  //   isShow: boolean;
+  //   this.show = !this.show;
   // }
 
   constructor() { }

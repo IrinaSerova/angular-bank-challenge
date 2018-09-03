@@ -21,7 +21,7 @@ export class AtmComponent {
     this.balance = this.bankService.getBalance();
   }
   onWithdraw(){
-    this.bankService.withdraw(this.amount;
+    this.bankService.withdraw(this.amount);
     this.balance = this.bankService.getBalance();
 
   }
