@@ -21,15 +21,25 @@
     <!--</section>-->
     <!-- Add functionality to the buttons below -->
 
-<form>
- 
-  <input type="text" name="firstname" value="Name">
+<form ([formGroup])="myForm" novalidate (ngSubmit)="save(myForm.value, myForm.valid)">
 
-  <input type="text" name="email" value="Email">
+ 
+  <input type="text" name="firstname" value="name">
+   <small [hidden]="myForm.controls.name.valid || (myForm.controls.name.pristine && !submitted)">
+        Name is required (minimum 5 characters).
+    </small>
+    <input 
+          type="text" class="form-control"
+          placeholder="Your email" 
+          ([formControl])="email"
+          [style.borderColor]="email.errors && email.dirty? 'red' : null"
+          #emailInput><hr>
+
+  <!--<input type="text" name="email" value="Email">-->
   
   <textarea name="message" rows="10" cols="30">Message</textarea>
 
-  <input type="submit" value="SUBMIT">
+  <input (click)="onSubmit()" type="submit" value="SUBMIT">
 </form> 
  </aside>
 

@@ -14,9 +14,10 @@
     <!-- Display: if inquiring about transactions -->
     <h4>Last 3 Transactions</h4>
     <div *ngIf="isShow">
-    <p>[01-01-2018] -  Deposit ($20 USD)</p>
-    <p>[01-01-2018] -  Withdrawal ($40 USD)</p>
-    <p>[01-01-2018] -  Deposit ($20 USD)</p>
+   
+    <li *ngFor="let transaction of bankService.account.transactions">
+        {{ transaction.date }}  - {{ transaction.type | uppercase }}  (${{ transaction.amount }} {{ transaction.currency | uppercase }} USD)
+      </li>
     </div>
   </section>
   <aside class="options">

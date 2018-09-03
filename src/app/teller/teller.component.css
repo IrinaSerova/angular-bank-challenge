@@ -17,13 +17,11 @@
   flex-basis: 30vw;
 }
 
-.options-list {
+li {
   list-style: none;
 }
 
-.options-item {
 
-}
 button {
   background-color: #124E78;
   width: 100%;
