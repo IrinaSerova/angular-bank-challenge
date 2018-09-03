@@ -58,10 +58,10 @@ export class BankService {
     
   }
   
-  // show() {
-  //   isShow: boolean;
-  //   this.show = !this.show;
-  // }
+ isShow: boolean  = true;
+  show(){
+   this.isShow =  !this.isShow;
+ }
 
   constructor() { }
 }
