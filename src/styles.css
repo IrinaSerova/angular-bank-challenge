@@ -30,10 +30,15 @@ section h4 {
     text-shadow: 1px 1px black;
     
 }
-section ul {
+
+.options-list, .options-item {
     list-style: none;
-   
+    padding: 5px;
 }
 section, aside {
       text-shadow: 1px 1px black;
+}
+ul {
+    list-style: none;
+    
 }
