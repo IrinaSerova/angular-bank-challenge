@@ -9,7 +9,8 @@ import { BankService } from '../bank.service';
 export class AtmComponent implements OnInit{
   balance: number;
   amount: number = 100;
-  @Input() value: number;
+  @Input() numberNew: number;
+
   
   constructor(public bankService: BankService) { 
     console.log(bankService);
@@ -19,7 +20,7 @@ export class AtmComponent implements OnInit{
     this.balance = this.bankService.getBalance();
   }
   onDeposit(){
-    this.bankService.deposit(this.value);
+    this.bankService.deposit(this.amount);
     this.balance = this.bankService.getBalance();
   }
   onWithdraw(){
@@ -30,6 +31,11 @@ export class AtmComponent implements OnInit{
   onGetTransactions(){
     this.bankService.account.getTransactions();
   }
+ 
+  isShow: boolean  = false;
+  changeShow(){
+  this.isShow =  !this.isShow 
+}
   ngOnInit() {}
 
 

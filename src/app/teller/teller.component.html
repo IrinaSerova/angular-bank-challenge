@@ -3,34 +3,37 @@
   <section class="display">
     <!-- Display: Customer information except for when inquiring about transaction -->
     <h4>Customer Information</h4>
-    <p>Customer Name: First Last</p>
-    <p>Age: 100</p>
-    <p>Address: 1234 Test Lane.<br>
-      San Diego, CA 92000<br>
-      United States
+   
+      <p>{{ bankService.account.age }}</p>
+    <p>{{ bankService.account.address.street }}</p>
+    <p>{{ bankService.account.address.city }}<br>
+     {{ bankService.account.address.country }}<br>
+     
     </p>
-    <br><br>
+   
     <!-- Display: if inquiring about transactions -->
     <h4>Last 3 Transactions</h4>
+    <div *ngIf="isShow">
     <p>[01-01-2018] -  Deposit ($20 USD)</p>
     <p>[01-01-2018] -  Withdrawal ($40 USD)</p>
     <p>[01-01-2018] -  Deposit ($20 USD)</p>
+    </div>
   </section>
   <aside class="options">
     <section class="balance">
       <!-- Display customer balance -->
-      $20.00 USD
+      {{ bankService.account.balance }} USD
     </section>
     <!-- Add functionality to the buttons below -->
     <ul class="options-list">
       <li class="options-item">
-        <button>Widthdrawl for Customer</button>
+        <button (click)="onWithdraw">Widthdrawl for Customer</button>
       </li>
       <li class="options-item">
-        <button>Deposit for Customer</button>
+        <button (click)="onDeposit">Deposit for Customer</button>
       </li>
       <li class="options-item">
-        <button>Customer Transaction History</button>
+        <button (click)="show()">Customer Transaction History</button>
       </li>
     </ul>
   </aside>

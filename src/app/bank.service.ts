@@ -58,8 +58,8 @@ export class BankService {
     
   }
   
- isShow: boolean  = true;
-  show(){
+ isShow: boolean  = false;
+  changeShow(){
    this.isShow =  !this.isShow;
  }
 

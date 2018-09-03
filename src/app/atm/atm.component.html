@@ -13,19 +13,23 @@
     <div>
       <h4>Last 3 Transactions</h4>
     </div>
+    <div *ngIf="isShow">
     <ul>
       <li *ngFor="let transaction of bankService.account.transactions">
         {{ transaction.date }} {{ transaction.type | uppercase }}  {{ transaction.amount }} {{ transaction.currency | uppercase }}
       </li>
     </ul>
+    </div>
     
   </section>
   <aside class="options">
     <!-- Add functionality to the buttons below -->
-      <input type="number" min="0" max="1000" value="{{value}}" ng-model="value"/>
-    <input type="number" 
-           min="0" max="99" value="{{initValue}}" >
-    <input type="number" ng-model="amountNew" aria-label="amount">
+    <div>{{ input }}</div>
+      <input type="number" min="0" max="1000"  value="{{numberNew}}" ngModel="numberNew" />
+    <!--<input type="number" -->
+    <!--       min="0" max="99" value="{{initValue}}" >-->
+    <!--<input type="number" ng-model="amountNew" aria-label="amount">-->
+    
     <ul class="options-list">
       <li class="options-item">
         <button *ngIf="balance > 100" (click)="onWithdraw()">Make a Widthdrawl</button>
@@ -37,7 +41,7 @@
         <button (click)="onGetBalance()">Balance Inquiry</button>
       </li>
       <li class="options-item">
-        <button (click)="onGetTransactions()">Transactions History</button>
+        <button (click)="changeShow()">Transactions History</button>
       </li>
     </ul>
   </aside>
