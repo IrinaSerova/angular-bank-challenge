@@ -22,15 +22,15 @@
   <aside class="options">
     <section class="balance">
       <!-- Display customer balance -->
-      {{ bankService.account.balance }} USD
+      {{ bankService.account.balance | number:0 }} USD
     </section>
     <!-- Add functionality to the buttons below -->
     <ul class="options-list">
       <li class="options-item">
-        <button (click)="onWithdraw">Widthdrawl for Customer</button>
+        <button *ngIf="balance > 100" (click)="onWithdraw()">Widthdrawl for Customer</button>
       </li>
       <li class="options-item">
-        <button (click)="onDeposit">Deposit for Customer</button>
+        <button (click)="onDeposit()">Deposit for Customer</button>
       </li>
       <li class="options-item">
         <button (click)="show()">Customer Transaction History</button>
