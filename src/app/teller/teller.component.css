@@ -8,13 +8,13 @@
 }
 
 .display {
-  flex-basis: 50vw;
-  background-color: darkslategrey;
+  flex-basis: 70vw;
+
   color: white;
 }
 
 .options {
-  flex-basis: 50vw;
+  flex-basis: 30vw;
 }
 
 .options-list {
@@ -23,4 +23,21 @@
 
 .options-item {
 
+}
+button {
+  background-color: #124E78;
+  width: 100%;
+  height: 50px;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+}
+button:hover {
+  background-color: #053C5E;
+}
+section {
+  background-color: #1F7A8C;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  padding: 15px;
 }
