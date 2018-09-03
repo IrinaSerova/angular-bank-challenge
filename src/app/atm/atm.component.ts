@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { BankService } from '../bank.service';
 
 @Component({
@@ -6,9 +6,11 @@ import { BankService } from '../bank.service';
   templateUrl: './atm.component.html',
   styleUrls: ['./atm.component.css']
 })
-export class AtmComponent {
+export class AtmComponent implements OnInit{
   balance: number;
   amount: number = 100;
+  @Input() value: number;
+  
   constructor(public bankService: BankService) { 
     console.log(bankService);
   }
@@ -17,7 +19,7 @@ export class AtmComponent {
     this.balance = this.bankService.getBalance();
   }
   onDeposit(){
-    this.bankService.deposit(this.amount);
+    this.bankService.deposit(this.value);
     this.balance = this.bankService.getBalance();
   }
   onWithdraw(){
@@ -28,9 +30,7 @@ export class AtmComponent {
   onGetTransactions(){
     this.bankService.account.getTransactions();
   }
-  // widthdrawlInfo = '';
-  // widthdrawlButton(){
-  //   this.widthdrawlInfo = '10';
-  // }
+  ngOnInit() {}
+
 
 }
