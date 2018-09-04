@@ -45,20 +45,23 @@ export class BankService {
   }
   
   withdraw(amount){
-    
-    this.account.balance -= amount;
-    this.account.transactions.push({
+    if (balance > 0){
+      this.account.balance -= amount;
+    this.account.transactions.unshift({
       date: '03-03-02',
       type: 'withdraw',
       amount: amount,
       currency: 'usd'
     })
-    
+    } else {
+      
+    alert('Your account does not have enough money available to cover a payment');
+    }
     
   }
   deposit(amount){
     this.account.balance += amount;
-    this.account.transactions.push({
+    this.account.transactions.unshift({
       date: '03-03-02',
       type: 'deposit',
       amount: amount,

@@ -17,7 +17,7 @@
     </div>
     <div *ngIf="isShow">
     <ul>
-      <li *ngFor="let transaction of bankService.account.transactions  | lastThree">
+      <li *ngFor="let transaction of bankService.account.transactions | slice:0:3">
         {{ transaction.date }} {{ transaction.type | uppercase }}  {{ transaction.amount }} {{ transaction.currency | uppercase }}
       </li>
     </ul>
@@ -26,8 +26,9 @@
   </section>
   <aside class="options">
     <!-- Add functionality to the buttons below -->
-    <div>{{ input }}</div>
-      <input type="number" min="0" max="1000"  value="{{numberNew}}"  [(ngModel)]="numberNew" />
+    <!--<div>{{ input }}</div>-->
+    
+      <input type="number" min="1" max="1000"    [(ngModel)]="numberNew" />
     <!--<input type="number" -->
     <!--       min="0" max="99" value="{{initValue}}" >-->
     <!--<input type="number" ng-model="amountNew" aria-label="amount">-->

@@ -10,7 +10,7 @@ import { ContactComponent ) from '../contact/contact.component';
 export class AtmComponent implements OnInit{
   balance: number;
   amount: number = 100;
-  @Input() numberNew: number;
+  @Input() numberNew: number = 1;
 
   
   constructor(public bankService: BankService) { 
@@ -27,7 +27,7 @@ export class AtmComponent implements OnInit{
   onWithdraw(){
     this.bankService.withdraw(this.numberNew);
     this.balance = this.bankService.getBalance();
-
+  
   }
   onGetTransactions(){
     this.bankService.account.getTransactions();
