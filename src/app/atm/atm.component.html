@@ -3,12 +3,14 @@
   <section class="display">
      Welcome, Henry!
     <!-- Display Feedback information here -->
-   
+   <div class="jumbotron text-center" *ngIf="submitted">
+    <h2>Thanks for your submission!</h2>
+    <p>We appreciate it!</p>
+    <h3>{{ diagnostic }}</h3>
+</div>
     
     <!-- Display Customer Balance  -->
-    <!--<h4>Your Balance {{ bankService.account.balance }}</h4>-->
   
- 
     <div><h4 class="options" id="balance"> {{ balance | number:0}}</h4></div>
     <div>
       <h4>Last 3 Transactions</h4>

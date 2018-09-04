@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+/*@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');*/
 body {
       background-color: #BFDBF7;
       /*font-family: 'Orbitron', sans-serif;*/
@@ -37,6 +38,7 @@ section h4 {
 }
 section, aside {
       text-shadow: 1px 1px black;
+      
 }
 ul {
     list-style: none;
