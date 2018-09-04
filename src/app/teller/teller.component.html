@@ -23,11 +23,9 @@
   <aside class="options">
     <section class="balance">
           <input type="number" min="1" max="1000"    [(ngModel)]="numberNew" />
-          <!--<div><h4 class="options" id="balance"> {{ balance | number:0}}</h4></div>-->
       
       <!-- Display customer balance -->
-      <!--{{ balance | number:0 }} USD-->
-    {{ balance | number:0}}
+      {{ bankService.account.balance | number:0 }} USD
     </section>
     <!-- Add functionality to the buttons below -->
     <ul class="options-list">
@@ -37,8 +35,8 @@
       <li class="options-item">
         <button (click)="onDeposit()">Deposit for Customer</button>
       </li>
-      <li class="options-item">
-        <button (click)="show()">Customer Transaction History</button>
+     <li class="options-item">
+        <button (click)="changeShow()">Transactions History</button>
       </li>
     </ul>
   </aside>

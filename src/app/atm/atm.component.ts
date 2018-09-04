@@ -24,11 +24,23 @@ export class AtmComponent implements OnInit{
     this.bankService.deposit(this.numberNew);
     this.balance = this.bankService.getBalance();
   }
-  onWithdraw(){
+  // onWithdraw(){
+  //   if (balance > 0){
+  //   this.bankService.withdraw(this.numberNew);
+  //   this.balance = this.bankService.getBalance();
+  //   } else {
+      
+  //   alert('Your account does not have enough money available to cover a payment');
+  //   }
+  // }
+    onWithdraw(){
+    
     this.bankService.withdraw(this.numberNew);
     this.balance = this.bankService.getBalance();
-  
+   
   }
+  
+   
   onGetTransactions(){
     this.bankService.account.getTransactions();
   }

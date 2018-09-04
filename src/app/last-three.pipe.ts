@@ -11,7 +11,7 @@ export class LastThreePipe implements PipeTransform {
   transform (values) {
     console.log(values, "ppp");
     if (values) {
-      return values.reverse();
+      // return values..slice(-3, -1);
       
     }
   }

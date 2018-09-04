@@ -44,8 +44,9 @@ export class BankService {
     return this.account.balance;
   }
   
-  withdraw(amount){
-    if (balance > 0){
+
+   withdraw(amount){
+    if (amount < this.account.balance){
       this.account.balance -= amount;
     this.account.transactions.unshift({
       date: '03-03-02',
