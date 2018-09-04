@@ -47,10 +47,23 @@ export class BankService {
   withdraw(amount){
     
     this.account.balance -= amount;
+    this.account.transactions.push({
+      date: '03-03-02',
+      type: 'withdraw',
+      amount: amount,
+      currency: 'usd'
+    })
+    
     
   }
   deposit(amount){
     this.account.balance += amount;
+    this.account.transactions.push({
+      date: '03-03-02',
+      type: 'deposit',
+      amount: amount,
+      currency: 'usd'
+    })
     
   }
   getTransactions(){

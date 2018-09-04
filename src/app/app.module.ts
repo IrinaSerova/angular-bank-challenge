@@ -10,6 +10,7 @@ import { ContactComponent } from './contact/contact.component';
 import { routes } from './app.router';
 import { NavComponent } from './nav/nav.component';
 import { BankService } from './bank.service';
+import { LastThreePipe } from './last-three.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { BankService } from './bank.service';
     AtmComponent,
     TellerComponent,
     NavComponent,
-    ContactComponent
+    ContactComponent,
+    LastThreePipe
   ],
   imports: [
     BrowserModule,

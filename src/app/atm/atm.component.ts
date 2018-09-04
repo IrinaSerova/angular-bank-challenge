@@ -21,11 +21,11 @@ export class AtmComponent implements OnInit{
     this.balance = this.bankService.getBalance();
   }
   onDeposit(){
-    this.bankService.deposit(this.amount);
+    this.bankService.deposit(this.numberNew);
     this.balance = this.bankService.getBalance();
   }
   onWithdraw(){
-    this.bankService.withdraw(this.amount);
+    this.bankService.withdraw(this.numberNew);
     this.balance = this.bankService.getBalance();
 
   }
